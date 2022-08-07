@@ -1,4 +1,4 @@
-package packages;
+package src.packages;
 import java.io.File;
 import java.lang.management.ClassLoadingMXBean;
 
@@ -42,7 +42,7 @@ public class Database {
         return false;
     }
 
-    public static User getUserFromBase(int pin){
+    public static Users getUserFromBase(int pin){
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -59,7 +59,7 @@ public class Database {
                 System.out.println(xmlElement.getElementsByTagName("pin").item(0).getTextContent());
                 System.out.println(xmlElement.getElementsByTagName("money").item(0).getTextContent());
                 if (xmlElement.getElementsByTagName("pin").item(0).getTextContent().equals(Integer.toString(pin))) {
-                    return new User().getUser(
+                    return new Users().getUser(
                         xmlElement.getElementsByTagName("name").item(0).getTextContent(),
                         xmlElement.getElementsByTagName("email").item(0).getTextContent(),
                         Integer.parseInt(xmlElement.getElementsByTagName("money").item(0).getTextContent()), 

@@ -1,20 +1,22 @@
-package packages;
+package src.packages;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
 import org.xml.sax.*;
+import src.packages.Users;
 import org.w3c.dom.*;
 import java.io.*;
 import java.util.*;
 import java.util.Scanner;
 import java.util.regex.*;
-import packages.User;
 
-class ATM {
-    User active_user;
 
-    ATM() {
+
+public class Atm {
+    Users active_user;
+
+    public Atm() {
         atmOn();
     }
 
@@ -22,7 +24,7 @@ class ATM {
         
     }
 
-    public ATM atmOn(){
+    public Atm atmOn(){
         while(true){
             Scanner operation = new Scanner(System.in);
             System.out.println("Welcome to ATM");
@@ -47,7 +49,7 @@ class ATM {
                     break;
             }
 
-            ATM atm = new ATM();
+            Atm atm = new Atm();
             return atm;
         }   
     }
@@ -98,7 +100,7 @@ class ATM {
         int pin = operation.nextInt();
         System.out.println("Please enter your money");
         int money = operation.nextInt();
-        User user = new User().createNewUser(name, email, money, pin);
+        Users user = new Users().createNewUser(name, email, money, pin);
         System.out.println("Account created");
         login();
     }
@@ -126,7 +128,7 @@ class ATM {
     }
 
     public void openAccount(String name, String email,  int money , int pin) {
-        User newUser = new User();
+        Users newUser = new Users();
         newUser.createNewUser(name, email,  money, pin);
         newUser.addUserToBase(newUser);
     }

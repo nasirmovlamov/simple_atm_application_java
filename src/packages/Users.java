@@ -1,4 +1,4 @@
-package packages;
+package src.packages;
 import java.io.File;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
@@ -7,18 +7,18 @@ import javax.xml.transform.stream.*;
 import org.w3c.dom.*;
 
 
-class User {
+public class Users {
     private int id;
     private String name;
     private String email;
     private int money;
     private int pin;
 
-    User(
+    public Users(
 
     ) {}
 
-    public User createNewUser(String name, String email,  int money, int pin) {
+    public Users createNewUser(String name, String email,  int money, int pin) {
         System.out.println(Database.createUniqueIdNotInBase());
         this.id = Database.createUniqueIdNotInBase();
         this.name = name;
@@ -30,7 +30,7 @@ class User {
         return this;
     }
 
-    public User getUser(String name, String email,  int money, int pin) {
+    public Users getUser(String name, String email,  int money, int pin) {
         System.out.println(Database.createUniqueIdNotInBase());
         this.id = Database.createUniqueIdNotInBase();
         this.name = name;
@@ -110,7 +110,7 @@ class User {
         return "My name is " + name;
     }
 
-    public void addUserToBase(User user){
+    public void addUserToBase(Users user){
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -143,7 +143,7 @@ class User {
         }
     }
 
-    public User updateUserOnBase(User user){
+    public Users updateUserOnBase(Users user){
         try {
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();

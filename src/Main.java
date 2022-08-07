@@ -1,10 +1,11 @@
-package packages;
+package src;
 
-import packages.ATM;
+import src.packages.Atm;
+
 
 
 public class Main {
     public static void main(String[] args) {
-        ATM atm = new ATM();
+        Atm atm = new Atm();
     }
 }
