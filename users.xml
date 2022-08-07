@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><users>	
     
     <user>
+        <id>1</id>
+        <name>heybet</name>
+        <email>heybet@gmail.com</email>
+        <money>800</money>
+        <pin>9876</pin>
+    </user>
+    
+    <user>
         <id>0</id>
         <name>nasir</name>
         <email>nasirmovlamov@gmail.com</email>
         <money>900</money>
         <pin>6547</pin>
     </user>
-
+    
     
 </users>

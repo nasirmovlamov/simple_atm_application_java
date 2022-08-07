@@ -1,18 +1,10 @@
 package src.packages;
 import java.io.File;
-import java.lang.management.ClassLoadingMXBean;
-
-import javax.lang.model.type.UnionType;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.*;
 import javax.xml.transform.stream.*;
-import org.xml.sax.*;
-
-import netscape.javascript.JSObject;
-
 import org.w3c.dom.*;
-import java.util.*;
 
 
 public class Database {
@@ -49,28 +41,20 @@ public class Database {
             Document doc = docBuilder.parse(new File("users.xml"));
             Element rootElement = doc.getDocumentElement();
             NodeList nList = rootElement.getElementsByTagName("user");
-
-            System.out.println();
+            
             for (int temp = 0; temp < nList.getLength(); temp++) {
                 Element xmlElement = (Element)nList.item(temp);
-                System.out.println(xmlElement.getElementsByTagName("id").item(0).getTextContent());
-                System.out.println(xmlElement.getElementsByTagName("name").item(0).getTextContent());
-                System.out.println(xmlElement.getElementsByTagName("email").item(0).getTextContent());
-                System.out.println(xmlElement.getElementsByTagName("pin").item(0).getTextContent());
-                System.out.println(xmlElement.getElementsByTagName("money").item(0).getTextContent());
-                if (xmlElement.getElementsByTagName("pin").item(0).getTextContent().equals(Integer.toString(pin))) {
+                if(xmlElement.getElementsByTagName("pin").item(0).getTextContent().equals(Integer.toString(pin))) {
                     return new Users().getUser(
                         xmlElement.getElementsByTagName("name").item(0).getTextContent(),
                         xmlElement.getElementsByTagName("email").item(0).getTextContent(),
                         Integer.parseInt(xmlElement.getElementsByTagName("money").item(0).getTextContent()), 
                         Integer.parseInt(xmlElement.getElementsByTagName("pin").item(0).getTextContent())
                     );
-                }else{
-                    return null;
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            // e.printStackTrace();
             return null;
         }
         return null;

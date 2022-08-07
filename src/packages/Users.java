@@ -19,25 +19,21 @@ public class Users {
     ) {}
 
     public Users createNewUser(String name, String email,  int money, int pin) {
-        System.out.println(Database.createUniqueIdNotInBase());
         this.id = Database.createUniqueIdNotInBase();
         this.name = name;
         this.email = email;
         this.money = money;
         this.pin = pin;
         addUserToBase(this);
-        System.out.println(this);
         return this;
     }
 
     public Users getUser(String name, String email,  int money, int pin) {
-        System.out.println(Database.createUniqueIdNotInBase());
         this.id = Database.createUniqueIdNotInBase();
         this.name = name;
         this.email = email;
         this.money = money;
         this.pin = pin;
-        System.out.println(this);
         return this;
     }
 
